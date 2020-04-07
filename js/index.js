@@ -41,16 +41,33 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"])
 
-// Task 1: Create selectors to point your data into elements
-/* [ ] Create selectors by using any of the DOM element"s methods
-/* [ ] Note that IDs have been used on all images.  Use the IDs to update src path content. */
 
 // Nav bar
+
 let navBarLinks = document.querySelectorAll("nav a");
-for(i = 0; i < navBarLinks.length; i++){
+for(i = 0; i < navBarLinks.length-1; i++){
   const navObject = Object.values(siteContent["nav"]);
   navBarLinks[i].textContent = navObject[i];
+  navBarLinks[i].style.color = 'green';
 }
+let append = document.createElement('a');
+append.textContent = "Append";
+append.href = "#";
+append.style.color = "green";
+document.querySelector('nav').appendChild(append);
+
+let prep = document.createElement('a');
+prep.textContent = "Prepend";
+prep.href = "#";
+prep.style.color = "green";
+document.querySelector('nav').prepend(prep);
+
+// let a = document.createElement('a').appendChild(document.createElement('b') );
+// navBarLinks.appendChild(document.createElement('a'));
+
+
+
+
 
 // CTA
 let h1 = document.querySelector("h1");
