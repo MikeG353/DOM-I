@@ -39,4 +39,79 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute("src", siteContent["nav"]["img-src"])
+
+// Task 1: Create selectors to point your data into elements
+/* [ ] Create selectors by using any of the DOM element"s methods
+/* [ ] Note that IDs have been used on all images.  Use the IDs to update src path content. */
+
+// Nav bar
+let navBarLinks = document.querySelectorAll("nav a");
+for(i = 0; i < navBarLinks.length; i++){
+  const navObject = Object.values(siteContent["nav"]);
+  navBarLinks[i].textContent = navObject[i];
+}
+
+// CTA
+let h1 = document.querySelector("h1");
+h1.textContent = siteContent["cta"]["h1"];
+
+let getStarted = document.querySelector(".cta button");
+getStarted.textContent = siteContent["cta"]["button"]
+
+let codeImg = document.getElementById("cta-img");
+codeImg.setAttribute("src", siteContent["cta"]["img-src"]);
+
+//main-content
+let featuresSectionTitle = document.querySelector(".top-content .text-content:first-of-type h4");
+featuresSectionTitle.textContent = siteContent["main-content"]["features-h4"];
+
+let featuresSectionContent = document.querySelector(".top-content .text-content:first-of-type p");
+featuresSectionContent.textContent = siteContent["main-content"]["features-content"];
+
+ let aboutSectionTitle = document.querySelector(".top-content .text-content:last-of-type h4");
+ aboutSectionTitle.textContent = siteContent["main-content"]["about-h4"];
+
+ let aboutSectionContent = document.querySelector(".top-content .text-content:last-of-type p");
+ aboutSectionContent.textContent = siteContent["main-content"]["about-content"];
+
+ let middleImg = document.getElementById("middle-img");
+ middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"])
+
+ //
+ //
+ let servicesSectionTitle = document.querySelector(".bottom-content .text-content:nth-of-type(1) h4");
+servicesSectionTitle.textContent = siteContent["main-content"]["services-h4"];
+
+let servicesSectionContent = document.querySelector(".bottom-content .text-content:nth-of-type(1) p");
+servicesSectionContent.textContent = siteContent["main-content"]["services-content"];
+
+let productSectionTitle = document.querySelector(".bottom-content .text-content:nth-of-type(2) h4");
+productSectionTitle.textContent = siteContent["main-content"]["product-h4"];
+
+let productSectionContent = document.querySelector(".bottom-content .text-content:nth-of-type(2) p");
+productSectionContent.textContent = siteContent["main-content"]["product-content"];
+
+let visionSectionTitle = document.querySelector(".bottom-content .text-content:nth-of-type(3) h4");
+visionSectionTitle.textContent = siteContent["main-content"]["vision-h4"];
+
+let visionSectionContent = document.querySelector(".bottom-content .text-content:nth-of-type(3) p");
+visionSectionContent.textContent = siteContent["main-content"]["vision-content"];
+
+// Contact
+
+let contactSectionTitle = document.querySelector(".contact h4");
+contactSectionTitle.textContent = siteContent["contact"]["contact-h4"];
+
+let contactSectionAddress = document.querySelector(".contact p:nth-of-type(1)");
+contactSectionAddress.textContent = siteContent["contact"]["address"];
+
+let contactSectionPhone = document.querySelector(".contact p:nth-of-type(2)");
+contactSectionPhone.textContent = siteContent["contact"]["phone"];
+
+let contactSectionEmail = document.querySelector(".contact p:nth-of-type(3)");
+contactSectionEmail.textContent = siteContent["contact"]["email"];
+
+//footer
+let copyright = document.querySelector("footer p");
+copyright.textContent = siteContent["footer"]["copyright"]
